@@ -1,0 +1,30 @@
+{{!< default}}
+
+{{> header }}
+
+<div class="mainContent">
+    <section class="tags">
+        {{#tag}}
+            {{#has slug="artister"}}
+            {{else}}
+                <section class="tag-list">
+                    <header class="tag-tittel">
+                        <h1>{{name}}</h1>
+                    </header>
+                    {{#if description}}
+                    <h2>{{description}}</h2>
+                    {{/if}}
+                </section>
+            {{/has}}
+        {{/tag}}
+        <div class="tag-wrapper">
+            {{#foreach posts}}
+                {{#has tag="nyheter"}}
+                    {{> "nyhet-card"}}
+                {{else}}
+                    {{> "artist-card"}}
+                {{/has}}
+            {{/foreach}}
+        </div>
+    </section>
+</div>

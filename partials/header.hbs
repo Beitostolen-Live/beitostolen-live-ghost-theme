@@ -1,0 +1,86 @@
+<style type="text/css">
+    .responsive-header-img {
+        background-image: url({{asset "images/HEADER.png" size='xl'}});
+    }
+    @media(max-width: 1000px) {
+        .responsive-header-img {
+            background-image: url({{asset "images/HEADER.png" size='l'}});
+            background-image: -webkit-image-set(
+                    url({{asset "images/HEADER.png" size='l'}}) 1x,
+                    url({{asset "images/HEADER.png" size='xl'}}) 2x
+            );
+            background-image: image-set(
+                    url({{asset "images/HEADER.png" size='l'}}) 1x,
+                    url({{asset "images/HEADER.png" size='xl'}}) 2x
+            );
+        }
+    }
+    @media(max-width: 600px) {
+        .responsive-header-img {
+            background-image: url({{asset "images/HEADER.png" size='m'}});
+            background-image: -webkit-image-set(
+                    url({{asset "images/HEADER.png" size='m'}}) 1x,
+                    url({{asset "images/HEADER.png" size='l'}}) 2x
+            );
+            background-image: image-set(
+                    url({{asset "images/HEADER.png" size='m'}}) 1x,
+                    url({{asset "images/HEADER.png" size='l'}}) 2x
+            );
+        }
+    }
+    header nav li a {
+        background: url({{asset "images/MENYKNAPPBAK.png"}});
+        background-size: 100% 100%;
+    }
+</style>
+
+<header id="topHeader" class="responsive-header-img">
+    <div class="centerheader">
+        <div class="info">
+            <div class="row">12.-13. JUNI</div>
+            <div class="row">2020</div>
+        </div>
+        <div class="logo">
+            <a href="{{@site.url}}">
+                <img src="{{@site.logo}}" alt="{{@site.title}}" />
+            </a>
+        </div>
+        <div class="info">
+            <div class="row">BEITOSTØLEN</div>
+            <div class="row">STADION</div>
+        </div>
+        <div class="somediv">
+            <a href="/">
+                <img src="{{asset "images/FACEBOOK.png"}}" alt="Facebook" class="some" />
+            </a>
+            <a href="/">
+                <img src="{{asset "images/INSTAGRAM.png"}}" alt="Instagram" class="some" />
+            </a>
+            <a href="/">
+                <img src="{{asset "images/TWITTER.png"}}" alt="Twitter" class="some" />
+            </a>
+        </div>
+    </div>
+    <nav>
+        <ul id="menu">
+            {{#if @site.navigation}}
+                {{navigation}}
+            {{/if}}
+        </ul>
+    </nav>
+</header>
+
+<div class="wrapper"></div>
+    <div id="global-navigation">
+        <header class="header">
+            <div class="logo">
+
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</div>

@@ -6,31 +6,42 @@
     <title>{{meta_title}}</title>
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
     {{ghost_head}}
-
 </head>
 <body class="{{body_class}}">
+    {{{body}}}
 
-    <div class="site-wrapper">
-
-        {{{body}}}
-
-        <footer class="site-footer outer">
-            <div class="site-footer-content inner">
-                <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-                <nav class="site-footer-nav">
-                    <a href="{{@site.url}}">Latest Posts</a>
-                    {{#if @site.facebook}}<a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener">Facebook</a>{{/if}}
-                    {{#if @site.twitter}}<a href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener">Twitter</a>{{/if}}
-                    <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-                </nav>
-            </div>
-        </footer>
-
-    </div>
-    
     {{ghost_foot}}
+ <footer>
+    <div class="centerFooter">
+      <img class="bllogo" src="{{@site.logo}}" alt="" />
+    </div>
+    <div class="centerFooter">
+      <div class="footerContainer">
+        <div class="linksContainer">
+          <span><a href='/cookie'>Cookies</a></span> |
+          <span><a href='/privacy'>Privacy Policy</a></span> |
+          <span><a href='/terms'>Terms &amp; Conditions</a></span>
+        </div>
+        <div class="creditContainer">
+          <span><a href="https://www.facebook.com/deformatno/" target="_blank">Design: Deformat</a></span> |
+          <span><a href="https://www.teilin.net/about/" target="_blank">Webutvikler: Teis Lindemark</a></span>
+        </div>
+      </div>
+    </div>
+</footer>
 
+<script>
+    var $buoop = {required:{e:0,f:-3,o:-3,s:-1,c:-3},insecure:true,unsupported:true,api:2019.08 };
+    function $buo_f(){
+    var e = document.createElement("script");
+    e.src = "//browser-update.org/update.min.js";
+    document.body.appendChild(e);
+    };
+    try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
+    catch(e){window.attachEvent("onload", $buo_f)}
+</script>
 </body>
 </html>

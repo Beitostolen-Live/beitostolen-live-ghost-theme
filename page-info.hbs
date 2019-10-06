@@ -1,0 +1,36 @@
+{{!< default}}
+
+{{> header }}
+
+<div class="mainContent">
+
+    {{#post}}
+
+    <article class="{{post_class}}">
+        <header class="page-header">
+            <h1 class="page-title">Om Beitostølen Live</h1>
+            <section class="page-meta">
+                {{excerpt}}
+            </section>
+        </header>
+        {{#if feature_image}}
+            <hr />
+            <img src="{{img_url feature_image}}">
+        {{/if}}
+        <section>
+            <h1 class="page-title">{{title}}</h1>
+            <hr />
+            {{#get "posts" filter="tags:info" order="published_at asc" }}
+                {{#foreach posts}}
+                {{/foreach}}
+            {{/get}}
+        </section>
+        <section class="page-content">
+            <hr />
+            {{content}}
+        </section>
+    </article>
+
+    {{/post}}
+
+</div>

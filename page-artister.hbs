@@ -1,0 +1,17 @@
+{{!< default}}
+
+{{> header }}
+
+<div class="mainContent">
+
+    <section class="tags">
+        <div class="tag-wrapper">
+            {{#get "posts" filter="tags:artister" order="published_at asc" }}
+                {{#foreach posts}}
+                    {{> "artist-card"}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </section>
+
+</div>

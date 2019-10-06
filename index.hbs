@@ -1,0 +1,64 @@
+{{!< default}}
+<style>
+    .mainContent {
+        margin-top: -50px;
+        background-image: url({{img_url @site.cover_image}});
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+</style>
+<div class="mainPage">
+
+    {{> header }}
+
+    <div class="mainContent">
+        {{> front }}
+    </div>
+</div>
+<section class="newsletter">
+    <div class="centerClass">
+        <a href="https://newsletter.beitostolenlive.no/signup" target="_blank">
+            <div class="headerNewsLetter">Meld deg på vårt nyhetsbrev</div>
+        </a>
+    </div>
+</section>
+
+<section class="news">
+    <div class="centerClass">
+        <a href="/tag/Nyheter/">
+            <div class="nyhetHeader">NYHETER</div>
+        </a>
+    </div>
+    <div class="centerWrapper">
+        <div class="wrapper">
+            {{#get "posts" filter="tags:nyheter" limit="3"}}
+                {{#foreach posts}}
+                    <article class="newsItem">
+                        <div class="newsImage">
+                            <img class="newsCoverImage" src="{{img_url feature_image size="m"}}" />
+                        </div>
+                        <a href="{{url}}">
+                            <h2>{{title}}</h2>
+                        </a>
+                        <div class="ingress">{{excerpt}}</div>
+                    </article>
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</section>
+{{!--
+{{> front tag="frontpage"}}
+--}}
+{{!--
+{{#get "posts" include="tags,authors" filter="tags:nyheter" limit="3"}}
+    {{#foreach posts}}
+        {{title}}
+    {{/foreach}}
+{{/get}}
+--}}
