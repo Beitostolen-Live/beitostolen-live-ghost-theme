@@ -1,39 +1,3 @@
-<style type="text/css">
-    .responsive-header-img {
-        background-image: url({{asset "images/HEADER.png" size='xl'}});
-    }
-    @media(max-width: 1000px) {
-        .responsive-header-img {
-            background-image: url({{asset "images/HEADER.png" size='l'}});
-            background-image: -webkit-image-set(
-                    url({{asset "images/HEADER.png" size='l'}}) 1x,
-                    url({{asset "images/HEADER.png" size='xl'}}) 2x
-            );
-            background-image: image-set(
-                    url({{asset "images/HEADER.png" size='l'}}) 1x,
-                    url({{asset "images/HEADER.png" size='xl'}}) 2x
-            );
-        }
-    }
-    @media(max-width: 600px) {
-        .responsive-header-img {
-            background-image: url({{asset "images/HEADER.png" size='m'}});
-            background-image: -webkit-image-set(
-                    url({{asset "images/HEADER.png" size='m'}}) 1x,
-                    url({{asset "images/HEADER.png" size='l'}}) 2x
-            );
-            background-image: image-set(
-                    url({{asset "images/HEADER.png" size='m'}}) 1x,
-                    url({{asset "images/HEADER.png" size='l'}}) 2x
-            );
-        }
-    }
-    header nav li a {
-        background: url({{asset "images/MENYKNAPPBAK.png"}});
-        background-size: 100% 100%;
-    }
-</style>
-
 <header id="topHeader" class="responsive-header-img">
     <div class="centerheader">
         <div class="info">
@@ -61,7 +25,18 @@
             </a>
         </div>
     </div>
-    <nav>
+    <nav role='navigation'>
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="mobileMenu">
+                {{#if @site.navigation}}
+                    {{navigation}}
+                {{/if}}
+            </ul>
+        </div>
         <ul id="menu">
             {{#if @site.navigation}}
                 {{navigation}}

@@ -20,10 +20,12 @@
                 <hr />
             {{/has}}
         {{/tag}}
-        <div class="tag-wrapper">
-            {{#foreach posts}}
-                {{> "artist-card"}}
-            {{/foreach}}
+        <div class="centerWrapper">
+            <div class="wrapper">
+                {{#foreach posts}}
+                    {{> "nyhet-card"}}
+                {{/foreach}}
+            </div>
         </div>
     </section>
 </div>

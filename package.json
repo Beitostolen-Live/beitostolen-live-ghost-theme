@@ -13,7 +13,8 @@
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
-        "postship": "git fetch && gulp release"
+        "postship": "git fetch && gulp release",
+        "styles-autoprefix": "for f in $(find . -name '*.css'); do echo $f; postcss --replace  --use autoprefixer $f; done"
     },
     "author": {
         "name": "Beitostølen Live",
@@ -40,7 +41,7 @@
     "contributors": "https://github.com/teilin/beitostolen-live-ghost-theme/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.3.2",
-        "autoprefixer": "9.6.1",
+        "autoprefixer": "^9.6.1",
         "beeper": "1.1.1",
         "cssnano": "4.1.10",
         "gscan": "2.7.0",
