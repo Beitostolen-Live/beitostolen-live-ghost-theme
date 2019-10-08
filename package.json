@@ -1,7 +1,7 @@
 {
     "name": "beitostolen-live",
     "description": "Beitostølen Live Theme",
-    "version": "0.0.1",
+    "version": "1.0.2",
     "engines": {
         "ghost-api": "v2"
     },
@@ -13,8 +13,7 @@
         "pretest": "gulp build",
         "preship": "yarn test",
         "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
-        "postship": "git fetch && gulp release",
-        "styles-autoprefix": "for f in $(find . -name '*.css'); do echo $f; postcss --replace  --use autoprefixer $f; done"
+        "postship": "git fetch && gulp release"
     },
     "author": {
         "name": "Beitostølen Live",

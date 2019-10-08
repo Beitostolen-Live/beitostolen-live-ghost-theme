@@ -1,0 +1,38 @@
+{{!< default}}
+
+{{> header }}
+
+<div class="mainContent">
+
+    {{#post}}
+
+    <article class="{{post_class}}">
+        <div class="centerClass">
+            <div class="nyhetHeader">{{title}}</div>
+        </div>
+        {{#if feature_image}}
+            <img class="kontaktCoverImage" src="{{img_url feature_image}}">
+        {{/if}}
+        <div class="omraader">
+            <div>
+                <div class="kontaktExcept">{{excerpt}}</div>
+                <div class="kontaktinline">
+                    <span><i class="fas fa-at"></i></span>
+                    <a href="mailto:post@beitostolenlive.no">post@beitostolenlive.no</a>
+                </div>
+                <div class="kontaktExcept">
+                    <span class="companyName">Beitostølen Live AS</span>
+                    <span class="orgNumber">Org.nr 920 481 892</span>
+                    <span class="address1">c/o Valdres Økonomitjenester AS</span>
+                    <span class="address2">Bygdinvegen 1725, 2943 Rogne</span>
+                </div>
+            </div>
+            <div>
+                {{content}}
+            </div>
+        </div>
+    </article>
+
+    {{/post}}
+
+</div>
