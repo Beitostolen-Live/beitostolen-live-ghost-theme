@@ -17,7 +17,8 @@
 
 @font-face {
     font-family: Futura;
-    src: url("../fonts/Futura.otf") format("opentype");
+    src:  url("../fonts/Futura.ttc") format("truetype"),
+          url("../fonts/Futura.ttf") format("truetype");
 }
 
 html {
@@ -279,6 +280,8 @@ header.tag-tittel h1 {
 }
 
 #tag-post {
+    width: 300px;
+    height: 300px;
     padding: 10px;
 }
 
@@ -302,6 +305,14 @@ header.tag-tittel h1 {
     justify-content: center;
     align-items: center;
     padding: 20px;
+}
+
+.post-meta {
+    width: 100%;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    font-family: Futura;
+    font-size: 0.75rem;
 }
 
 .post-title {
@@ -635,6 +646,11 @@ article.newsItem {
     width: 300px;
 }
 
+.post-card-image {
+    width: 300px;
+    height: 300px;
+}
+
 .newsCoverImage {
     width: 300px;
 }
@@ -695,6 +711,37 @@ a {
     width: 200px;
 }
 
+.kontaktinline {
+    display: inline;
+    font-size: 1.2em;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.kontaktExcept {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.companyName {
+    font-weight: bolder;
+}
+
+.kontaktExcept span {
+    display: inline-block;
+    width: 100%;
+    padding: 2px;
+}
+
+.kontaktinline span {
+    font-size: 1.2em;
+}
+
+.kontaktCoverImage {
+    width: 100%;
+}
+
 @media (max-width:1024px) {
     .post {
         width: 90%;
@@ -704,7 +751,7 @@ a {
     .tag-wrapper {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: 900px;
+        /*grid-template-rows: 900px;*/
     }
     .partnereContainer ul {
         list-style: none;

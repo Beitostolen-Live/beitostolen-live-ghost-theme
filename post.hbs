@@ -9,15 +9,16 @@
     <article class="{{post_class}}">
     {{^has tag="artister"}}
         <header class="post-header">
-            <div class="post-title">{{title}}</h1>
-            {{#has tag="nyheter"}}
-                <section class="post-meta">
-                    <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
-                    {{date format="DD MMMM YYYY"}}
-                    </time>
-                </section>
-            {{/has}}
+            <div class="vertically post-title">{{title}}</div>
         </header>
+        {{#has tag="nyheter"}}
+            <section class="centerClass post-meta">
+                Publisert
+                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
+                {{date format="DD. MMMM YYYY"}}
+                </time>
+            </section>
+        {{/has}}
     {{/has}}
     {{#if feature_image}}
         <section class="post-feature-image">
