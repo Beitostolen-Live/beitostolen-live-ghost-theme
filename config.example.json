@@ -1,6 +1,6 @@
 {
     "github": {
-        "username": "<username>",
-        "token": "<gh-personal-access-token>"
+        "username": "${{ secrets.GITHUB_USER }}",
+        "token": "${{ secrets.GITHUB_TOKEN }}"
     }
 }
