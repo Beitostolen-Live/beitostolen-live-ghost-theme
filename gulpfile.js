@@ -3,17 +3,9 @@ const pump = require('pump');
 
 // gulp plugins and utils
 const livereload = require('gulp-livereload');
-const postcss = require('gulp-postcss');
 const zip = require('gulp-zip');
 const uglify = require('gulp-uglify');
 const beeper = require('beeper');
-
-// postcss plugins
-const autoprefixer = require('autoprefixer');
-const colorFunction = require('postcss-color-function');
-const cssnano = require('cssnano');
-const customProperties = require('postcss-custom-properties');
-const easyimport = require('postcss-easy-import');
 
 function serve(done) {
     livereload.listen();
@@ -37,17 +29,8 @@ function hbs(done) {
 }
 
 function css(done) {
-    const processors = [
-        easyimport,
-        customProperties({preserve: false}),
-        colorFunction(),
-        autoprefixer({browsers: ['last 2 versions']}),
-        cssnano()
-    ];
-
     pump([
-        src('assets/css/*.css', {sourcemaps: true}),
-        postcss(processors),
+        src('assets/css/screen*.css', {sourcemaps: true}),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));

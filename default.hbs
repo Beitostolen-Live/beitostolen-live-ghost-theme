@@ -7,14 +7,32 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=11" />
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.min.css"}}" />
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
-    {{{body}}}
-
-    {{ghost_foot}}
+  {{#if @site.navigation}}
+    {{navigation}}
+  {{/if}}
+  {{#get "posts" filter="featured:true+tags:nyheter" limit="1" order="published_at asc"}}
+    {{#foreach posts}}
+      <div class="container-fluid topbottompadding alert-featured" role="alert">
+        <div class="row">
+          <div class="col-2"><span class="featured-icon"><i class="fas fa-exclamation"></i></span></div>
+          <div class="col-10 center-content">
+            <article>
+              <h1><a href="{{url}}">{{title}}</a></h1>
+              <p class="lead">{{excerpt}}</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    {{/foreach}}
+  {{/get}}
+  {{{body}}}
+  {{ghost_foot}}
  <footer>
     <div class="centerFooter">
       <img class="bllogo" src="{{@site.logo}}" alt="" />
@@ -34,6 +52,9 @@
     </div>
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 <script>
     var $buoop = {required:{e:0,f:-3,o:-3,s:-1,c:-3},insecure:true,unsupported:true,api:2019.08 };
     function $buo_f(){

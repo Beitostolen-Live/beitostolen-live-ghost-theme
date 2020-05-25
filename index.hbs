@@ -1,5 +1,48 @@
 {{!< default}}
-<style>
+{{!-- https://cdn.beitostolenlive.no/oktoberkampanje-web.mp4 --}}
+<header class="v-header v-container">
+    <div class="fullscreen-video-wrap">
+        <video autoplay loop muted controls="true">
+            <source src="https://cdn.beitostolenlive.no/oktoberkampanje-web.webm" 
+                    type='video/webm;codecs="vp8, vorbis"'/>
+            <source src="https://cdn.beitostolenlive.no/oktoberkampanje-web.mp4" type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' />
+            <img src="https://cdn.beitostolenlive.no/Cover_Foto_Marthe_A_Vannebo%202.jpg" title="Your browser does not support the <video> tag" />
+        </video>
+    </div>
+</header>
+<div class="container-fluid topbottompadding center-content yellow-bg">
+    <div>
+        <h1 id="paintBrushBg">Nyhetsbrev</h1>
+        <div class="row">
+            <form class="form-inline">
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputEmail" class="sr-only">Din e-post adresse</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Din e-post adresse">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Motta nyhetsbrev</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="container-fluid topbottompadding center-content">
+    <article>
+    <h1 id="paintBrushBg"><a href="/tag/Nyheter/">Nyheter</a></h1>
+    <div class="row">
+        {{#get "posts" filter="featured:false+tags:nyheter" limit="3"}}
+            {{#foreach posts}}
+                <div class="col card" style="width: 18rem;">
+                    <img src="{{img_url feature_image size="m"}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title"><a href="{{url}}">{{title}}</a></h3>
+                        <p class="card-text">{{excerpt}}</p>
+                    </div>
+                </div>
+            {{/foreach}}
+        {{/get}}
+    </div>
+    </article>
+</div>
+{{!-- <style>
     .mainContent {
         margin-top: -50px;
         background-image: url({{img_url @site.cover_image}});
@@ -51,4 +94,4 @@
             {{/get}}
         </div>
     </div>
-</section>
+</section> --}}
