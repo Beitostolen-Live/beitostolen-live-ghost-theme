@@ -1,40 +1,36 @@
 {{!< default}}
 
-{{> header }}
-
-<div class="mainContent">
+<div class="container">
 
     {{#post}}
 
     <article class="{{post_class}}">
-        <header class="post-header">
-            <h1 class="post-title">Om Beitostølen Live</h1>
-        </header>
-        <section class="post-content">
+        <h1 id="paintBrushBg">Om Beitostølen Live</h1>
+        <p>
             {{excerpt}}
-        </section>
+        </p>
         {{#if feature_image}}
             <hr />
-            <img class="infoCoverImage" src="{{img_url feature_image}}">
+            <img class="img-fluid" src="{{img_url feature_image}}">
         {{/if}}
         <section>
-            <h1 class="post-title">{{title}}</h1>
+            <h1 id="paintBrushBg">{{title}}</h1>
             <hr />
-            <div class="omraader">
+            <div class="row">
                 {{#get "posts" filter="tags:info" order="title asc" }}
                     {{#foreach posts }}
-                        <div class="omraade">
-                            <div class="omraadetittel"><a href="{{url}}">{{title}}</a></div>
-                            <div class="omraadebeskrivelse">{{excerpt}}</div>
+                        <div class="col-md-4">
+                            <h4><a href="{{url}}">{{title}}</a></h4>
+                            <p>{{excerpt}}</p>
                         </div>
                     {{/foreach}}
                 {{/get}}
             </div>
         </section>
-        <section class="post-content">
+        <p>
             <hr />
             {{content}}
-        </section>
+        </p>
     </article>
 
     {{/post}}

@@ -1,29 +1,33 @@
 {{!< default}}
 
-{{> header }}
-
-<div class="mainContent">
-    <section class="post">
-        {{#tag}}
-            {{#has slug="artister"}}
-            {{else}}
-                <section class="tag-list">
-                    <header class="tag-tittel">
-                        <h1>{{name}}</h1>
-                    </header>
-                    {{#if description}}
-                        <section class="post-content">
-                            {{description}}
-                        </section>
-                    {{/if}}
-                </section>
-                <hr />
-            {{/has}}
-        {{/tag}}
-        <div class="tag-wrapper">
+<div class="container">
+    {{#tag}}
+        {{#has slug="artister"}}
+        {{else}}
+            <section class="tag-list">
+                <h1 id="paintBrushBg">{{name}}</h1>
+                {{#if description}}
+                    <section class="post-content">
+                        {{description}}
+                    </section>
+                {{/if}}
+            </section>
+            <hr />
+        {{/has}}
+    {{/tag}}
+    <article class="center-content">
+        <div class="row">
             {{#foreach posts}}
-                {{> "artist-card"}}
+                {{#if feature_image}}
+                    <div class="col-md-4">
+                        <a href="{{url}}">
+                            <img class="bl-img-card"
+                                src="{{img_url feature_image }}"
+                                alt="{{title}}" />
+                        </a>
+                    </div>
+                {{/if}}
             {{/foreach}}
         </div>
-    </section>
+    </article>
 </div>

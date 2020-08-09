@@ -1,91 +1,68 @@
 {{!< default}}
 
-{{> header }}
+{{#post}}
 
-<div class="mainContent">
-
-    {{#post}}
-
-    <article class="{{post_class}}">
-    {{^has tag="artister"}}
-        <header class="post-header">
-            <div class="vertically post-title">{{title}}</div>
-        </header>
-        {{#has tag="nyheter"}}
-            <section class="centerClass post-meta">
-                Publisert
-                <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
-                {{date format="DD. MMMM YYYY"}}
-                </time>
-            </section>
-        {{/has}}
-    {{/has}}
-    {{#if feature_image}}
-        <section class="post-feature-image">
-            <img src="{{img_url feature_image size="s"}}" alt="{{title}}" />
+<div class="container {{post_class}}">
+    <h1 id="paintBrushBg">{{title}}</h1>
+{{^has tag="artister"}}
+    {{#has tag="nyheter"}}
+        <section class="mx-auto post-meta">
+            Publisert
+            <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
+            {{date format="DD. MMMM YYYY"}}
+            </time>
         </section>
-    {{/if}}
-    {{#has tag="#program"}}
-        <section class="centerWrapper">
-            <div class="program-grid">
-                {{#get "posts" limit="2" filter="tags:program" order="published_at asc"}}
-                    {{#foreach posts }}
-                        <div class="programBox">
-                            {{#if feature_image}}
-                                <img src="{{img_url feature_image size="s"}}" alt="{{title}}" />
-                            {{/if}}
-                            <div class="programContent">{{content}}</div>
-                        </div>
-                    {{/foreach}}
-                {{/get}}
-            </div>
-        </section>
-        <hr />
     {{/has}}
-    <section class="post-content">
-        {{content}}
-    </section>
+{{/has}}
+{{^has tag="nyheter,artister"}}
+{{#if feature_image}}
+    <div class="center-content">
+        <img class="img-fluid" src="{{img_url feature_image}}" alt="{{title}}" />
+    </div>
+{{/if}}
+{{/has}}
+<section class="post-content">
+    {{content}}
+</section>
 
-    {{#has tag="frivillig"}}
-        <div class="centerClass">
-            <a href="https://form.arkon.no/?id=4839&key=ngONpn&fbclid=IwAR0Q4KPW07qg-pqhJTAiq8O0cAID82b2rTiT4CITgIfs9UJwELcAliD8gHs" target="_blank">
-                <img class="bliFrivilligImg" src="{{asset 'images/FRIVILLIG-KNAPP.png'}}" />
-            </a>
-        </div>
-        <hr />
-        <div class="omraader">
-            {{#get "posts" filter="tags:frivillig" order="title asc" }}
-                {{#foreach posts }}
-                    <div class="omraade">
-                        <div class="omraadetittel"><a href="{{url}}">{{title}}</a></div>
-                        <div class="omraadebeskrivelse">{{excerpt}}</div>
-                    </div>
-                {{/foreach}}
-            {{/get}}
-        </div>
-        <div class="centerClass">
-            <a href="https://form.arkon.no/?id=4839&key=ngONpn&fbclid=IwAR0Q4KPW07qg-pqhJTAiq8O0cAID82b2rTiT4CITgIfs9UJwELcAliD8gHs" target="_blank">
-                <img class="bliFrivilligImg" src="{{asset 'images/FRIVILLIG-KNAPP.png'}}" />
-            </a>
-        </div>
-    {{/has}}
+{{#has tag="frivillig"}}
+    <div class="center-content">
+        <a href="https://form.arkon.no/?id=4839&key=ngONpn&fbclid=IwAR0Q4KPW07qg-pqhJTAiq8O0cAID82b2rTiT4CITgIfs9UJwELcAliD8gHs" target="_blank">
+            <img class="bl-frivillig-btn-img" src="{{asset 'images/FRIVILLIG-KNAPP.png'}}" />
+        </a>
+    </div>
+    <hr />
+    <div class="row">
+        {{#get "posts" filter="tags:frivillig" order="title asc" }}
+            {{#foreach posts }}
+                <div class="col-md-4">
+                    <h4><a href="{{url}}">{{title}}</a></h4>
+                    <p>{{excerpt}}</p>
+                </div>
+            {{/foreach}}
+        {{/get}}
+    </div>
+    <div class="center-content">
+        <a href="https://form.arkon.no/?id=4839&key=ngONpn&fbclid=IwAR0Q4KPW07qg-pqhJTAiq8O0cAID82b2rTiT4CITgIfs9UJwELcAliD8gHs" target="_blank">
+            <img class="bl-frivillig-btn-img" src="{{asset 'images/FRIVILLIG-KNAPP.png'}}" />
+        </a>
+    </div>
+{{/has}}
 
-    {{#has tag="#info"}}
-        <hr />
-        <div class="omraader">
-            {{#get "posts" filter="tags:info" order="title asc" }}
-                {{#foreach posts }}
-                    <div class="omraade">
-                        <div class="omraadetittel"><a href="{{url}}">{{title}}</a></div>
-                        <div class="omraadebeskrivelse">{{excerpt}}</div>
-                    </div>
-                {{/foreach}}
-            {{/get}}
-        </div>
-    {{/has}}
-
-    </article>
-
-    {{/post}}
+{{#has tag="#info"}}
+    <hr />
+    <div class="row">
+        {{#get "posts" filter="tags:info" order="title asc" }}
+            {{#foreach posts }}
+                <div class="col-md-4">
+                    <h4><a href="{{url}}">{{title}}</a></h4>
+                    <p>{{excerpt}}</p>
+                </div>
+            {{/foreach}}
+        {{/get}}
+    </div>
+{{/has}}
 
 </div>
+
+{{/post}}

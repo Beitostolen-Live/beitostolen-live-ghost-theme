@@ -1,31 +1,28 @@
 {{!< default}}
-
-{{> header }}
-
-<div class="mainContent">
-    <section class="post">
-        {{#tag}}
-            {{#has slug="artister"}}
-            {{else}}
-                <section class="tag-list">
-                    <header class="tag-tittel">
-                        <h1>{{name}}</h1>
-                    </header>
-                    {{#if description}}
-                        <section class="post-content">
-                            {{description}}
-                        </section>
-                    {{/if}}
-                </section>
-                <hr />
-            {{/has}}
-        {{/tag}}
-        <div class="centerWrapper">
-            <div class="wrapper">
-                {{#foreach posts}}
-                    {{> "nyhet-card"}}
-                {{/foreach}}
-            </div>
+<div class="container">
+    <h1 id="paintBrushBg"><a href="/tag/Nyheter/">Nyheter</a></h1>
+    <hr/>
+    {{#get "posts" filter="tag:nyheter" }}
+    <div class="row">
+    {{#foreach posts}}
+        {{#if featured}}
+        <div class="col-md-6">
+            <img style="width:100%;" src="{{feature_image}}" />
         </div>
-    </section>
+        <div class="col-md-6">
+            <h1><a href="{{url}}">{{title}}</a></h1>
+            <p>{{excerpt}}</p>
+        </div>
+        {{else}}
+            <div class="col-md-4 news-card bl-card" style="width: 18rem;">
+                <a href="{{url}}"><img src="{{img_url feature_image size="m"}}" class="card-img-top" alt="..."></a>
+                <div class="card-body">
+                    <h3 class="card-title"><a href="{{url}}">{{title}}</a></h3>
+                    <p class="card-text">{{excerpt}}</p>
+                </div>
+            </div>
+        {{/if}}
+    {{/foreach}}
+    </div>
+    {{/get}}
 </div>

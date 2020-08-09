@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -79,13 +80,18 @@ img.bllogo {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ee717d;
+  color: #fad5ac;
   font-size: 8em;
 }
 
 .topbottompadding {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+
+.someBtn {
+  width: 5rem;
+  padding: 0px 10px;
 }
 
 .center-content {
@@ -95,7 +101,7 @@ img.bllogo {
 }
 
 .alert-featured {
-  background-color: #fad5ac;
+  background-color: #ee717d;
   color: #14182e;
 }
 
@@ -103,8 +109,57 @@ img.bllogo {
   background-color: #fad5ac;
 }
 
+blockquote {
+  background: #fad5ac;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "“" "”" "‘" "’";
+  line-height: 24px;
+}
+
+blockquote::before {
+  color: #14182e;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+strong {
+  font-weight: bolder;
+}
+
+em {
+  font-style: italic;
+}
+
+p {
+  color: #14182e;
+  font-family: 'Futura';
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 24px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 h1 {
-  font-family: 'BLWebHeader';
+  font-family: 'BLWeb';
+  color: #14182e;
+  font-size: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'BLWeb';
   color: #14182e;
   font-size: 3rem;
   padding-top: 1rem;
@@ -112,8 +167,8 @@ h1 {
   text-transform: uppercase;
 }
 
-h2 {
-  font-family: 'BLWebHeader';
+h3 {
+  font-family: 'BLWeb';
   color: #14182e;
   font-size: 2rem;
   padding-top: 1rem;
@@ -121,13 +176,24 @@ h2 {
   text-transform: uppercase;
 }
 
-h3 {
-  font-family: 'BLWebHeader';
+h4 {
+  font-family: 'BLWeb';
   color: #14182e;
   font-size: 1rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-transform: uppercase;
+  font-weight: bold;
+}
+
+h5 {
+  font-family: 'Futura';
+  color: #14182e;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 a {
@@ -136,6 +202,43 @@ a {
 
 a:hover {
   color: #14182e;
+}
+
+.bl-nav-link {
+  text-align: center;
+  background: url("../images/MENYKNAPPBAK.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 15px;
+  text-align: center;
+  color: #fad5ac !important;
+  width: 200px;
+}
+
+.bl-brand-info {
+  display: inline-block;
+  font-family: BLWeb;
+  font-size: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.bl-row {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.bl-brand {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 #paintBrushBg {
@@ -178,6 +281,163 @@ a:hover {
 }
 
 .fullscreen-video-wrap video {
-  min-height: 100%;
+  min-height: 300%;
   min-width: 100%;
+}
+
+.bl-header {
+  background-image: url("../images/HEADER.png");
+  background-size: 100% 200%;
+  z-index: 20;
+}
+
+.bl-card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+}
+
+.bl-img-card {
+  width: 20rem;
+  height: 20rem;
+}
+
+.bl-frivillig-btn-img {
+  width: 20rem;
+}
+
+.news-card {
+  background-color: #fad5ac;
+  background: url("../images/Nyhetssak-Bakgrunn2.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+hr {
+  background: url("../images/STREK.png") no-repeat top center;
+  background-size: contain;
+  display: block;
+  height: 18px;
+  border: 0;
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+figure img {
+  max-width: 100%;
+  display: block;
+  position: relative;
+}
+
+figure.kg-width-full {
+  position: relative;
+}
+
+figure.kg-width-full img.kg-image {
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.partnereContainer {
+  text-align: center;
+}
+
+.partnereContainer ul {
+  list-style: none;
+  min-height: 100%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: auto 1fr auto;
+  font-family: Futura;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.partnereContainer ul li {
+  background: url("../images/MENYKNAPPBAK.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 15px;
+  text-align: center;
+  color: #fad5ac;
+}
+
+.kg-embed-card {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kg-embed-card iframe {
+  width: 100%;
+}
+
+.kg-image-card {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.kg-image-card img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kg-width-full {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+}
+
+.kg-width-full img {
+  width: 100%;
+}
+
+.kg-width-wide {
+  width: 100%;
+}
+
+.kg-width-wide img {
+  width: 100%;
+}
+
+.kg-embed-card {
+  left: 0;
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.kg-embed-card iframe {
+  border: 0 !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+}
+
+.post-meta {
+  text-align: center;
 }

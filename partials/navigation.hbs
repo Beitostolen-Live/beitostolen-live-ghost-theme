@@ -1,20 +1,45 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><img class="bllogo" src="{{@site.logo}}" alt="" /></a>
-    <div class="my-2 my-lg-0">
-        <a href="https://www.ticketmaster.no/event/614743" target="_blank">
-            <img class="frontBuyButton" style="width:200px;" src="{{asset "images/BILLETTKNAPP.png"}}" />
-        </a>
+<nav class="navbar sticky-top navbar-light bl-header">
+    <div class="container">
+    <div class="navbar-brand mx-auto bl-brand">
+        <div class="bl-brand-info mx-auto">
+            {{#get "posts" filter="featured:false+tag:hash-dato" limit="1"}}
+            {{#foreach posts}}
+            <div class="row bl-row mx-auto">{{title}}</div>
+            <div class="row bl-row mx-auto">{{excerpt}}</div>
+            {{/foreach}}
+            {{/get}}
+        </div>
+        <div class="bl-brand-info"><a href="#"><img class="bllogo" src="{{@site.logo}}" alt="" /></a></div>
+        <div class="bl-brand-info mx-auto">
+            {{#get "posts" filter="featured:false+tag:hash-sted" limit="1"}}
+            {{#foreach posts}}
+            <div class="row bl-row mx-auto">{{title}}</div>
+            <div class="row bl-row mx-auto">{{excerpt}}</div>
+            {{/foreach}}
+            {{/get}}
+        </div>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item mx-auto">
+            <a href="https://www.ticketmaster.no/event/614743" target="_blank">
+                <img class="frontBuyButton" style="width:150px;" src="{{asset "images/BILLETTKNAPP.png"}}" />
+            </a>
+        </li>
         {{#foreach navigation}}
-        <li class="nav-item">
-            <a class="nav-link {{#if current}} active{{/if}}" href="{{url absolute="true"}}">{{label}}</a>
+        <li class="nav-item mx-auto">
+            <a class="nav-link bl-nav-link {{#if current}} active{{/if}}" href="{{url absolute="true"}}">{{label}}</a>
         </li>
         {{/foreach}}
+        <li class="nav-item mx-auto">
+            <span><a href="https://www.facebook.com/beitostolenlive"><img class="someBtn" src="{{asset "images/FACEBOOK.png"}}" alt="Facebook link" /></a></span>
+            <span><a href="https://www.instagram.com/beitostolenlive/"><img class="someBtn" src="{{asset "images/INSTAGRAM.png"}}" alt="Instagram link" /></a></span>
+            <span><a href="https://twitter.com/BeitostolenLive"><img class="someBtn" src="{{asset "images/TWITTER.png"}}" alt="Twitter link" /></a></span>
+        </li>
     </ul>
+    </div>
     </div>
 </nav>
