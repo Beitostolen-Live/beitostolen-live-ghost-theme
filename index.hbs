@@ -40,19 +40,19 @@
 {{/get}}
 <div class="container-fluid topbottompadding center-content yellow-bg">
     <div>
-        <h1 id="paintBrushBg" style="padding-left:2em;padding-right:2em;"><a href="https://newsletter.beitostolenlive.no/signup">Meld deg på vårt nyhetsbrev</a></h1>
+        <h1 id="paintBrushBg" style="padding-left:2em;padding-right:2em;padding-top:1em;padding-bottom:1em;"><a href="https://newsletter.beitostolenlive.no/signup">Meld deg på vårt nyhetsbrev</a></h1>
     </div>
 </div>
-<div class="container-fluid topbottompadding center-content">
+<div class="container">
     <article>
     <h1 id="paintBrushBg"><a href="/tag/Nyheter/">Nyheter</a></h1>
-    <div class="row">
+    <div class="row center-content">
         {{#get "posts" filter="featured:false+tags:nyheter" limit="3"}}
             {{#foreach posts}}
                 <div class="col-md-4 news-card bl-card" style="width: 18rem;">
                     <a href="{{url}}"><img src="{{img_url feature_image size="m"}}" class="card-img-top" alt="..."></a>
                     <div class="card-body">
-                        <h3 class="card-title"><a href="{{url}}">{{title}}</a></h3>
+                        <h4 class="card-title"><a href="{{url}}">{{title}}</a></h4>
                         <p class="card-text">{{excerpt}}</p>
                     </div>
                 </div>

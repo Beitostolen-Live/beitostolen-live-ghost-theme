@@ -9,7 +9,7 @@
             {{/foreach}}
             {{/get}}
         </div>
-        <div class="bl-brand-info"><a href="#"><img class="bllogo" src="{{@site.logo}}" alt="" /></a></div>
+        <div class="bl-brand-info"><a href="{{@site.url}}"><img class="bllogo" src="{{@site.logo}}" alt="" /></a></div>
         <div class="bl-brand-info mx-auto">
             {{#get "posts" filter="featured:false+tag:hash-sted" limit="1"}}
             {{#foreach posts}}

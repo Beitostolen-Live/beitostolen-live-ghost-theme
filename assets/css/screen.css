@@ -69,6 +69,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 body {
   background-color: #ee717d !important;
   font-family: 'Futura';
+  font-size: calc(14px + (26-14) * ((100vw - 300vw) / (1600 - 300)));
 }
 
 img.bllogo {
@@ -78,10 +79,14 @@ img.bllogo {
 
 .featured-icon {
   display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
   justify-content: center;
   align-items: center;
-  color: #fad5ac;
-  font-size: 8em;
+  align-content: center;
+  justify-items: center;
+  color: #fad5ac !important;
+  font-size: 10vw;
 }
 
 .topbottompadding {
@@ -152,7 +157,7 @@ p {
 h1 {
   font-family: 'BLWeb';
   color: #14182e;
-  font-size: 5rem;
+  font-size: 5vw;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-transform: uppercase;
@@ -161,7 +166,7 @@ h1 {
 h2 {
   font-family: 'BLWeb';
   color: #14182e;
-  font-size: 3rem;
+  font-size: 4vw;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-transform: uppercase;
@@ -170,7 +175,7 @@ h2 {
 h3 {
   font-family: 'BLWeb';
   color: #14182e;
-  font-size: 2rem;
+  font-size: 3vw;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-transform: uppercase;
@@ -179,7 +184,7 @@ h3 {
 h4 {
   font-family: 'BLWeb';
   color: #14182e;
-  font-size: 1rem;
+  font-size: 2vw;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-transform: uppercase;
@@ -189,7 +194,7 @@ h4 {
 h5 {
   font-family: 'Futura';
   color: #14182e;
-  font-size: 1rem;
+  font-size: 1vw;
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-transform: uppercase;

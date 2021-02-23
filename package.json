@@ -1,9 +1,9 @@
 {
-    "name": "beitostolen-live",
+    "name": "beitostolen-live-v2",
     "description": "Beitostølen Live Theme",
-    "version": "1.0.4",
+    "version": "2.0.5",
     "engines": {
-        "ghost-api": "v2"
+        "ghost-api": "v3"
     },
     "license": "MIT",
     "scripts": {

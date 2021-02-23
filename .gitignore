@@ -5,6 +5,8 @@
 .DS_Store
 dist/
 
+assets/built/
+
 ### Node ###
 # Logs
 logs
