@@ -13,51 +13,58 @@
           </div>
           </div>
         </div>
+        <hr/>
       </div>
     {{/foreach}}
   {{/get}}
-{{#get "posts" filter="featured:true+tag:hash-frontpage"}}
-<header class="container-fluid">
-    <div class="row">
-        <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
-            {{#foreach posts}}
-                {{content}}
-            {{/foreach}}
-        </div>
-    </div>
-</header>
-{{/get}}
 {{#get "posts" filter="featured:false+tag:hash-frontpage"}}
-<header class="container-fluid">
+<header class="container-fluid spacetopfront">
     <div class="row">
         {{#foreach posts}}
-            <div class="col">
-                <img src="{{feature_image}}" alt="{{excerpt}}" style="width:100%; height:100%;" />
-            </div>
+            <img src="{{feature_image}}" alt="{{excerpt}}" style="width:100%; height:100%;" />
         {{/foreach}}
     </div>
 </header>
 {{/get}}
-<div class="container-fluid topbottompadding center-content yellow-bg">
-    <div>
-        <h1 id="paintBrushBg" style="padding-left:2em;padding-right:2em;padding-top:1em;padding-bottom:1em;"><a href="https://newsletter.beitostolenlive.no/signup">Meld deg på vårt nyhetsbrev</a></h1>
-    </div>
-</div>
+<hr/>
 <div class="container">
     <article>
     <h1 id="paintBrushBg"><a href="/tag/Nyheter/">Nyheter</a></h1>
-    <div class="row center-content">
+    <div class="row center-content d-flex align-items-start">
         {{#get "posts" filter="featured:false+tags:nyheter" limit="3"}}
             {{#foreach posts}}
-                <div class="col-md-4 news-card bl-card" style="width: 18rem;">
-                    <a href="{{url}}"><img src="{{img_url feature_image size="m"}}" class="card-img-top" alt="..."></a>
-                    <div class="card-body">
-                        <h4 class="card-title"><a href="{{url}}">{{title}}</a></h4>
-                        <p class="card-text">{{excerpt}}</p>
+                <div class="col-md-4">
+                    <div class="card news-card">
+                        <a href="{{url}}"><img
+                            src="{{img_url feature_image size="m"}}"
+                            class="card-img-top"
+                            alt="..." /></a>
+                        <div class="card-body">
+                            <a href="{{url}}"><h5 class="card-title">{{title}}</h5></a>
+                            <p class="card-text bl-card-text">{{excerpt}}</p>
+                        </div>
                     </div>
                 </div>
             {{/foreach}}
         {{/get}}
     </div>
     </article>
+</div>
+
+<div class="container">
+    <hr />
+    {{#get "posts" filter="tag:hash-video" limit="1"}}
+        {{#foreach posts}}
+            <div class="col-md-12 col-sm-12">
+                <h1 id="paintBrushBg">{{title}}</h1>
+                <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;">
+                    <iframe style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" 
+                            src="https://www.youtube.com/embed/{{excerpt}}" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        {{/foreach}}
+    {{/get}}
 </div>

@@ -1,24 +1,30 @@
 {{!< default}}
-<div class="container">
+<div class="container spacetop">
     <h1 id="paintBrushBg"><a href="/tag/Nyheter/">Nyheter</a></h1>
     <hr/>
-    {{#get "posts" filter="tag:nyheter" }}
+    {{#get "posts" filter="tag:nyheter" limit="all" }}
     <div class="row">
     {{#foreach posts}}
         {{#if featured}}
         <div class="col-md-6">
-            <img style="width:100%;" src="{{feature_image}}" />
+            <img class="bl-img-card" src="{{feature_image}}" />
         </div>
         <div class="col-md-6">
-            <h1><a href="{{url}}">{{title}}</a></h1>
+            <h2><a href="{{url}}">{{title}}</a></h2>
             <p>{{excerpt}}</p>
         </div>
         {{else}}
-            <div class="col-md-4 news-card bl-card" style="width: 18rem;">
-                <a href="{{url}}"><img src="{{img_url feature_image size="m"}}" class="card-img-top" alt="..."></a>
-                <div class="card-body">
-                    <h3 class="card-title"><a href="{{url}}">{{title}}</a></h3>
-                    <p class="card-text">{{excerpt}}</p>
+            <div class="col-md-4">
+                <div class="card news-card">
+                    <a href="{{url}}"><img
+                        src="{{img_url feature_image size="m"}}"
+                        class="card-img-top"
+                        alt="..."
+                    /></a>
+                    <div class="card-body">
+                        <a href="{{url}}"><h5 class="card-title">{{title}}</h5></a>
+                        <p class="card-text bl-card-text">{{excerpt}}</p>
+                    </div>
                 </div>
             </div>
         {{/if}}

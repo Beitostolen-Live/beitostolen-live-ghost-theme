@@ -1,17 +1,16 @@
 {{!< default}}
 
-<div class="container-fluid">
+<div class="container-fluid spacetop">
 
     {{#post}}
 
     <article class="{{post_class}}">
         <h1 id="paintBrushBg">{{title}}</h1>
         <div class="container">
-            <div class="row topbottompadding">
-                <div class="col-md-12">
-                    {{content}}
-                </div>
+            <div class="row">
+                {{content}}
             </div>
+            <hr />
             <div class="row text-center">
                 <div class="col-md-3">
                 <a class="btn-floating blue accent-1">
@@ -43,9 +42,5 @@
     </article>
 
     {{/post}}
-
-    {{#get "tags" filter="name:artister-*"}}
-        {{tags}}
-    {{/get}}
 
 </div>

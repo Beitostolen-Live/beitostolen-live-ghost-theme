@@ -69,12 +69,21 @@ blockquote:before, blockquote:after, q:before, q:after {
 body {
   background-color: #ee717d !important;
   font-family: 'Futura';
-  font-size: calc(14px + (26-14) * ((100vw - 300vw) / (1600 - 300)));
+  font-size: calc(16px + (26-14) * ((100vw - 300vw) / (1600 - 300)));
+}
+
+navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 0rem;
 }
 
 img.bllogo {
-  width: 5em;
-  height: 5em;
+  width: 3em;
+  height: 3em;
 }
 
 .featured-icon {
@@ -90,7 +99,7 @@ img.bllogo {
 }
 
 .topbottompadding {
-  padding-top: 2rem;
+  padding-top: 5rem;
   padding-bottom: 2rem;
 }
 
@@ -144,69 +153,33 @@ em {
   font-style: italic;
 }
 
-p {
-  color: #14182e;
-  font-family: 'Futura';
-  font-size: 14px;
-  line-height: 24px;
-  margin: 0 0 24px;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-h1 {
-  font-family: 'BLWeb';
-  color: #14182e;
-  font-size: 5vw;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-family: 'BLWeb';
-  color: #14182e;
-  font-size: 4vw;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-h3 {
-  font-family: 'BLWeb';
-  color: #14182e;
-  font-size: 3vw;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-h4 {
-  font-family: 'BLWeb';
-  color: #14182e;
-  font-size: 2vw;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-h5 {
-  font-family: 'Futura';
-  color: #14182e;
-  font-size: 1vw;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
 a {
   color: #14182e;
 }
 
 a:hover {
   color: #14182e;
+}
+
+footer {
+  color: #14182e;
+  background-image: url("../images/FOOTER.png");
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  padding-top: 10rem;
+}
+
+footer a {
+  color: #14182e;
+}
+
+footer a:hover {
+  color: #ee717d;
+}
+
+.spacetop {
+  margin-top: 9rem;
 }
 
 .bl-nav-link {
@@ -222,13 +195,13 @@ a:hover {
   padding: 15px;
   text-align: center;
   color: #fad5ac !important;
-  width: 200px;
+  width: 100px;
 }
 
 .bl-brand-info {
   display: inline-block;
   font-family: BLWeb;
-  font-size: 1em;
+  font-size: 0.8em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -292,14 +265,19 @@ a:hover {
 
 .bl-header {
   background-image: url("../images/HEADER.png");
-  background-size: 100% 200%;
-  z-index: 20;
+  background-size: 100% 100%;
+}
+
+.bl-footer {
+  background-image: url("../images/FOOTER.png");
+  background-size: 100% 100%;
 }
 
 .bl-card {
   position: relative;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   -ms-flex-direction: column;
   flex-direction: column;
   min-width: 0;
@@ -308,8 +286,15 @@ a:hover {
 }
 
 .bl-img-card {
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+}
+
+.bl-card-text {
+  text-align: left;
+}
+
+.row > div[class*='col-'] {
+  display: flex;
 }
 
 .bl-frivillig-btn-img {
@@ -328,6 +313,9 @@ a:hover {
   background-position: center center;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-style: none;
 }
 
 hr {
@@ -341,6 +329,12 @@ hr {
   padding-bottom: 10px;
 }
 
+ul {
+  list-style-type: square;
+  list-style-position: inside;
+  list-style-image: url("../images/PRIKK.png");
+}
+
 figure img {
   max-width: 100%;
   display: block;
@@ -349,6 +343,7 @@ figure img {
 
 figure.kg-width-full {
   position: relative;
+  padding-bottom: 2rem;
 }
 
 figure.kg-width-full img.kg-image {
@@ -391,6 +386,8 @@ figure.kg-width-full img.kg-image {
   width: 60%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 .kg-embed-card iframe {
@@ -399,7 +396,7 @@ figure.kg-width-full img.kg-image {
 
 .kg-image-card {
   padding-top: 1em;
-  padding-bottom: 1em;
+  padding-bottom: 2em;
 }
 
 .kg-image-card img {

@@ -1,6 +1,6 @@
 {{!< default}}
 
-<div class="container">
+<div class="container spacetop">
 
     {{#post}}
 
@@ -20,8 +20,18 @@
                 {{#get "posts" filter="tags:info" order="title asc" }}
                     {{#foreach posts }}
                         <div class="col-md-4">
-                            <h4><a href="{{url}}">{{title}}</a></h4>
-                            <p>{{excerpt}}</p>
+                            <div class="card news-card">
+                                {{#if feature_image}}
+                                <a href="{{url}}"><img
+                                    src="{{img_url feature_image size="m"}}"
+                                    class="card-img-top"
+                                    alt="..."/></a>
+                                {{/if}}
+                                <div class="card-body">
+                                    <a href="{{url}}"><h5 class="card-title">{{title}}</h5></a>
+                                    <p class="card-text bl-card-text">{{excerpt}}</p>
+                                </div>
+                            </div>
                         </div>
                     {{/foreach}}
                 {{/get}}

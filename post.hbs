@@ -2,7 +2,7 @@
 
 {{#post}}
 
-<div class="container {{post_class}}">
+<div class="container {{post_class}} spacetop">
     <h1 id="paintBrushBg">{{title}}</h1>
 {{^has tag="artister"}}
     {{#has tag="nyheter"}}
@@ -19,6 +19,7 @@
     <div class="center-content">
         <img class="img-fluid" src="{{img_url feature_image}}" alt="{{title}}" />
     </div>
+    <hr/>
 {{/if}}
 {{/has}}
 <section class="post-content">
@@ -27,7 +28,7 @@
 
 {{#has tag="frivillig"}}
     <div class="center-content">
-        <a href="https://form.arkon.no/?id=4839&key=ngONpn&fbclid=IwAR0Q4KPW07qg-pqhJTAiq8O0cAID82b2rTiT4CITgIfs9UJwELcAliD8gHs" target="_blank">
+        <a href="https://form.arkon.no/?id=7024&key=ylo1J3" target="_blank">
             <img class="bl-frivillig-btn-img" src="{{asset 'images/FRIVILLIG-KNAPP.png'}}" />
         </a>
     </div>
@@ -36,14 +37,24 @@
         {{#get "posts" filter="tags:frivillig" order="title asc" }}
             {{#foreach posts }}
                 <div class="col-md-4">
-                    <h4><a href="{{url}}">{{title}}</a></h4>
-                    <p>{{excerpt}}</p>
+                    <div class="card news-card">
+                        {{#if feature_image}}
+                        <a href="{{url}}"><img
+                            src="{{img_url feature_image size="m"}}"
+                            class="card-img-top"
+                            alt="..."/></a>
+                        {{/if}}
+                        <div class="card-body">
+                            <a href="{{url}}"><h5 class="card-title">{{title}}</h5></a>
+                            <p class="card-text bl-card-text">{{excerpt}}</p>
+                        </div>
+                    </div>
                 </div>
             {{/foreach}}
         {{/get}}
     </div>
     <div class="center-content">
-        <a href="https://form.arkon.no/?id=4839&key=ngONpn&fbclid=IwAR0Q4KPW07qg-pqhJTAiq8O0cAID82b2rTiT4CITgIfs9UJwELcAliD8gHs" target="_blank">
+        <a href="https://form.arkon.no/?id=7024&key=ylo1J3" target="_blank">
             <img class="bl-frivillig-btn-img" src="{{asset 'images/FRIVILLIG-KNAPP.png'}}" />
         </a>
     </div>
@@ -55,8 +66,18 @@
         {{#get "posts" filter="tags:info" order="title asc" }}
             {{#foreach posts }}
                 <div class="col-md-4">
-                    <h4><a href="{{url}}">{{title}}</a></h4>
-                    <p>{{excerpt}}</p>
+                    <div class="card news-card">
+                        {{#if feature_image}}
+                        <a href="{{url}}"><img
+                            src="{{img_url feature_image size="m"}}"
+                            class="card-img-top"
+                            alt="..."/></a>
+                        {{/if}}
+                        <div class="card-body">
+                            <a href="{{url}}"><h5 class="card-title">{{title}}</h5></a>
+                            <p class="card-text bl-card-text">{{excerpt}}</p>
+                        </div>
+                    </div>
                 </div>
             {{/foreach}}
         {{/get}}

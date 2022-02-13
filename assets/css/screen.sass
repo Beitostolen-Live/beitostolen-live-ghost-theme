@@ -5,11 +5,19 @@
 body
     background-color: $red!important
     font-family: 'Futura'
-    font-size: calc(14px + (26-14) * ((100vw - 300vw) / (1600 - 300)))
+    font-size: calc(16px + (26-14) * ((100vw - 300vw) / (1600 - 300)))
+
+navbar
+    position: relative
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    padding: 0rem 0rem
 
 img.bllogo
-    width: 5em
-    height: 5em
+    width: 3em
+    height: 3em
 
 .featured-icon
     display: flex
@@ -23,7 +31,7 @@ img.bllogo
     font-size: 10vw
 
 .topbottompadding
-    padding-top: 2rem
+    padding-top: 5rem
     padding-bottom: 2rem
 
 .someBtn
@@ -67,62 +75,26 @@ strong
 em
     font-style: italic
 
-p
-    color: $black 
-    font-family: 'Futura'
-    font-size: 14px
-    line-height: 24px
-    margin: 0 0 24px
-    text-align: justify
-    text-justify: inter-word
-
-h1
-    font-family: 'BLWeb'
-    color: $black
-    font-size: 5vw
-    padding-top: 1rem
-    padding-bottom: 1rem
-    text-transform: uppercase
-
-h2
-    font-family: 'BLWeb'
-    color: $black
-    font-size: 4vw
-    padding-top: 1rem
-    padding-bottom: 1rem
-    text-transform: uppercase
-
-h3
-    font-family: 'BLWeb'
-    color: $black
-    font-size: 3vw
-    padding-top: 1rem
-    padding-bottom: 1rem
-    text-transform: uppercase
-
-h4
-    font-family: 'BLWeb'
-    color: $black
-    font-size: 2vw
-    padding-top: 1rem
-    padding-bottom: 1rem
-    text-transform: uppercase
-    font-weight: bold
-
-h5
-    font-family: 'Futura'
-    color: $black
-    font-size: 1vw
-    padding-top: 1rem
-    padding-bottom: 1rem
-    text-transform: uppercase
-    font-weight: bold
-
 a
     color: $black
 
 a:hover
     color: $black
+
+footer
+    color: $black
+    background-image: url('../images/FOOTER.png')
+    background-size: 100% 100%
+    height: 100%
+    width: 100%
+    padding-top: 10rem
+    a
+        color: $black
+    a:hover
+        color: $red
+
+.spacetop
+    margin-top: 9rem
 
 .bl-nav-link
     text-align: center
@@ -137,12 +109,12 @@ a:hover
     padding: 15px
     text-align: center
     color: $yellow !important
-    width: 200px
+    width: 100px
 
 .bl-brand-info
     display: inline-block
     font-family: BLWeb
-    font-size: 1em
+    font-size: 0.8em
     text-align: center
     text-transform: uppercase
 
@@ -198,13 +170,17 @@ a:hover
 
 .bl-header
     background-image: url('../images/HEADER.png')
-    background-size: 100% 200%
-    z-index: 20
+    background-size: 100% 100%
+
+.bl-footer
+    background-image: url('../images/FOOTER.png')
+    background-size: 100% 100%
 
 .bl-card
     position: relative
     display: -ms-flexbox
     display: flex
+    flex-wrap: wrap
     -ms-flex-direction: column
     flex-direction: column
     min-width: 0
@@ -212,8 +188,13 @@ a:hover
     background-clip: border-box
 
 .bl-img-card
-    width: 20rem
-    height: 20rem
+    width: 100%
+
+.bl-card-text
+    text-align: left
+
+.row > div[class*='col-']
+    display: flex
 
 .bl-frivillig-btn-img
     width: 20rem
@@ -230,6 +211,9 @@ a:hover
     background-position: center center
     padding-top: 5rem
     padding-bottom: 5rem
+    padding-left: 1rem
+    padding-right: 1rem
+    border-style: none
 
 hr
     background: url('../images/STREK.png') no-repeat top center
@@ -241,6 +225,11 @@ hr
     padding-top: 10px
     padding-bottom: 10px
 
+ul
+    list-style-type: square
+    list-style-position: inside
+    list-style-image: url('../images/PRIKK.png')
+
 figure img
     max-width: 100%
     display: block
@@ -248,6 +237,7 @@ figure img
 
 figure.kg-width-full
     position: relative
+    padding-bottom: 2rem
     img.kg-image
         left: 0
         right: 0
@@ -284,13 +274,15 @@ figure.kg-width-full
     width: 60%
     margin-left: auto
     margin-right: auto
+    margin-bottom: 2rem
+    padding-bottom: 2rem
 
 .kg-embed-card iframe
     width: 100%
 
 .kg-image-card
     padding-top: 1em
-    padding-bottom: 1em
+    padding-bottom: 2em
 
 .kg-image-card img
     margin-left: auto

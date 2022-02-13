@@ -1,6 +1,6 @@
 {{!< default }}
 
-<div class="container-fluid">
+<div class="container-fluid spacetop">
     <article>
         <h1 id="paintBrushBg">Program</h1>
         <div id="carouselProgram" class="carousel slide" data-ride="carousel">
@@ -18,16 +18,16 @@
                             <div class="carousel-item active">
                                 <img src="{{img_url feature_image}}" class="d-block w-100" alt="{{excerpt}}">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>{{title}}</h5>
-                                    <p>{{content}}</p>
+                                    {{!-- <h5>{{title}}</h5>
+                                    <p>{{content}}</p> --}}
                                 </div>
                             </div>
                         {{else}}
                             <div class="carousel-item">
                                 <img src="{{img_url feature_image}}" class="d-block w-100" alt="{{excerpt}}">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>{{title}}</h5>
-                                    <p>{{content}}</p>
+                                    {{!-- <h5>{{title}}</h5>
+                                    <p>{{content}}</p> --}}
                                 </div>
                             </div>
                         {{/if}}
